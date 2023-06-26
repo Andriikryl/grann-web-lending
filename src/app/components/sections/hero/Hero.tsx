@@ -14,12 +14,13 @@ export default function Hero() {
       <Container>
         <div className={styles.inner__box}>
           <div className={styles.hero__box}>
-            {/* <h1 className={styles.hero__title}>GRANN</h1> */}
             <HeroTitle />
             <SubTitel />
           </div>
           <div className={styles.hero__btn}>
-            <Btn />
+            <div className={styles.box__bg}>
+              <Btn />
+            </div>
           </div>
           <div className={styles.social__box}>
             <a className={styles.social__link} href="#">

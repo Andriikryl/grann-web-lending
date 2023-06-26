@@ -152,3 +152,47 @@
       border: none;
       cursor: pointer;
   }
+
+
+  .box__bg {
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 5px;
+  }
+  
+  .box__bg::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color:#F5EEE0;
+    background-repeat: no-repeat;
+    background-size: 100%100%, 50%50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#705A66, #705A66);
+    animation: bgRotate 4s linear infinite;
+  }
+  
+  .box__bg::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 1px;
+    top: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background: linear-gradient(#F5EEE0, #F5EEE0);
+    border-radius: 12px;
+  }
+  
+  @keyframes bgRotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
