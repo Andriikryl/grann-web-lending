@@ -1,13 +1,19 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Silkscreen:wght@400;700&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 * {
   margin: 0;
+  padding: 0;
 }
 body {
+  font-family: 'Bacasime Antique', serif;
+  font-family: 'Silkscreen', cursive;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #F5F7F8;
 }
 img, picture, video, canvas, svg {
   display: block;
