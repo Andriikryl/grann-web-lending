@@ -1,0 +1,10 @@
+.introLine{
+    width: max-content;
+    margin-inline: auto;
+    justify-content: center;
+    display: flex;
+    color: #705A66;
+    font-size: 100px;
+    font-family: Moniqa;
+    font-weight: 900;
+}

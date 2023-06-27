@@ -1,0 +1,111 @@
+
+.best{
+    padding-block-end: 120px;
+    --space: 40px;
+    --space-md: calc(var(--space) * 2);
+    --content-max-width: 60ch;
+}
+
+  .sponsors{
+    --space-lg: 100px;
+    margin-block: clamp(30px, 5vw + 1rem, var(--space-lg));
+  }
+
+
+.gallery {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: inherit;
+    padding-block: var(--space-md);
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    border-bottom: 2px solid hsla(222, 100%, 97%, 1);
+  }
+  
+
+  .gallery::-webkit-scrollbar{
+    display: none;
+  }
+  .gallery::-webkit-scrollbar-track{
+    background-color: transparent;
+  }
+  .gallery::-webkit-scrollbar-thumb{
+    background-color: transparent;
+  }
+  
+  
+  .gallery .wrapper {
+    grid-column: content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .gallery .wrapper::after {
+    content: "";
+    align-self: stretch;
+    padding-inline-end: max(
+      var(--space),
+      (100vw - var(--content-max-width)) / 2 - var(--space)
+    );
+  }
+  
+  .gallery .item {
+    max-width: 393px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: center;
+    max-inline-size: 26rem;
+    overflow: hidden;
+  }
+
+  .card__title{
+    color: #705A66;
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 300;
+    max-width: 288px;
+  }
+
+  .flex__grup{
+    margin-block-start: 20px;
+    margin-block-end: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card__btn{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+
+  .card__desc{
+    color: #705A66;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 300;
+  }
+
+  .btn__box{
+    display: flex;
+    justify-content: center;
+  }
+
+  .best__box{
+    padding: 19px 82px;
+    border-radius: 10px;
+    background: #F5EEE0;
+    color: #705A66;
+    text-align: center;
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 300;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
