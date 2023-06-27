@@ -1,11 +1,8 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import gsap from "gsap";
 import { disperse } from "./anim";
 import styles from "./style.module.css";
-import { title } from "process";
-import { text } from "stream/consumers";
 
 interface TextDipserseProps {
   children: React.ReactNode;
@@ -59,7 +56,7 @@ function TextDipserse(props: TextDipserseProps): JSX.Element {
         manageMouseEnter();
       }}
       onMouseLeave={() => {
-        manageMouseLeave(false);
+        manageMouseLeave();
       }}
       className={styles.introLine}
     >
@@ -68,7 +65,11 @@ function TextDipserse(props: TextDipserseProps): JSX.Element {
   );
 }
 
-export default function Title({ text }): JSX.Element {
+interface TitleProps {
+  text: string;
+}
+
+export default function Title({ text }: TitleProps): JSX.Element {
   return (
     <TextDipserse>
       <h3>{text}</h3>
