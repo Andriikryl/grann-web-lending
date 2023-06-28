@@ -1,0 +1,49 @@
+.info{
+    position: relative;
+    background-image: url("../../../../../public/images/bg.jpg");
+    background-size: cover;
+    /* background-position: 200px; */
+    background-repeat: no-repeat;
+}
+
+
+.info__box{
+    position: relative;
+    z-index: 10;
+    margin-block: 100px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.info__img{
+    grid-column: 6 span;
+}
+
+.info__img img{
+    object-fit: fill;
+}
+
+
+.info__desc{
+    grid-column: 8 / 12 span;
+}
+
+.info__title{
+    color: #705A66;
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 300;
+    margin-block-end: 20px;
+}
+
+.info__descr{
+    color: #705A66;
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 300;
+    margin-block-end: 40px;
+}
+
+.info__descr p:nth-child(1){
+    margin-block-end: 20px;
+}

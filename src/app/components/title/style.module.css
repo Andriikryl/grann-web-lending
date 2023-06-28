@@ -7,4 +7,6 @@
     font-size: 100px;
     font-family: Moniqa;
     font-weight: 900;
+    position: relative;
+    z-index: 10;
 }
