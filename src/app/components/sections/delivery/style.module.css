@@ -1,0 +1,50 @@
+.delivery__box{
+    margin-block: 60px;
+}
+
+.delivery__list{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.list__item{
+    flex-shrink: 0;
+    max-width: 288px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.item__img{
+    margin-block-end: 33px;
+}
+
+.item__title{
+    color: #705A66;
+    text-align: center;
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-block-end: 20px;
+}
+
+.list__item:nth-child(1){
+    border-inline-end: 1px solid hsla(39, 25%, 82%, 1);
+    padding-inline-end: 55px;
+}
+.list__item:nth-child(2){
+    border-inline-end: 1px solid hsla(39, 25%, 82%, 1);
+    padding-inline-end: 55px;
+}
+
+.item__descrip{
+    color: #705A66;
+    text-align: center;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 300;
+}
