@@ -1,3 +1,4 @@
+import About from "./components/sections/about/About";
 import Best from "./components/sections/best/Best";
 import Delivery from "./components/sections/delivery/Delivery";
 import Hero from "./components/sections/hero/Hero";
@@ -12,6 +13,7 @@ export default function Home() {
       <Best />
       <Info />
       <Delivery />
+      <About />
     </>
   );
 }
