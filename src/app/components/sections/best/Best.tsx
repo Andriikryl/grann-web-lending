@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Container } from "../../contaniner/Container";
 import Title from "../../title/Title";
 import styles from "./style.module.css";
@@ -8,6 +8,7 @@ import Image from "next/image";
 import ImageOne from "public/images/best-1.jpg";
 import ImageTwo from "public/images/best-2.jpg";
 import ImageThree from "public/images/best-3.jpg";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const products = [
   {
@@ -58,8 +59,19 @@ const products = [
 ];
 
 export default function Best() {
+  const turgetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: turgetRef,
+    offset: ["end end", "end start"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
   return (
-    <section className={styles.best}>
+    <motion.section
+      className={styles.best}
+      style={{ opacity, scale }}
+      ref={turgetRef}
+    >
       <Container>
         <div>
           <Title text="Бестселлери" />
@@ -95,6 +107,6 @@ export default function Best() {
           </div>
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

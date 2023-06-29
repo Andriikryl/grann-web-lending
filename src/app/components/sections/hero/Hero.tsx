@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import styles from "./style.module.css";
 import { Container } from "../../contaniner/Container";
 import Tg from "../../icons/Tg";
@@ -7,12 +9,20 @@ import Inst from "../../icons/Inst";
 import SubTitel from "./SubTitel";
 import HeroTitle from "./HeroTitle";
 import Btn from "./Btn";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Hero() {
+  const turgetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: turgetRef,
+    offset: ["end end", "end start"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
   return (
-    <section className={styles.hero}>
+    <motion.section className={styles.hero} ref={turgetRef} style={{ opacity }}>
       <Container>
-        <div className={styles.inner__box}>
+        <motion.div className={styles.inner__box} style={{ scale }}>
           <div className={styles.hero__box}>
             <HeroTitle />
             <SubTitel />
@@ -33,8 +43,8 @@ export default function Hero() {
               <Inst />
             </a>
           </div>
-        </div>
+        </motion.div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

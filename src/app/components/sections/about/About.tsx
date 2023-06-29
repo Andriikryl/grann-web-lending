@@ -4,6 +4,7 @@ import AboutImg from "public/about/about.png";
 import Image from "next/image";
 import styles from "./style.module.css";
 import Title from "../../title/Title";
+import { motion, Variants } from "framer-motion";
 export default function About() {
   return (
     <section className={styles.about}>
