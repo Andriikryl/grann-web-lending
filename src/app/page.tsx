@@ -4,6 +4,7 @@ import Delivery from "./components/sections/delivery/Delivery";
 import Hero from "./components/sections/hero/Hero";
 import Info from "./components/sections/info/Info";
 import Questions from "./components/sections/qust/Questions";
+import Social from "./components/sections/social/Social";
 import Types from "./components/sections/types/Types";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Delivery />
       <About />
       <Questions />
+      <Social />
     </>
   );
 }

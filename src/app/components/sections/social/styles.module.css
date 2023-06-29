@@ -1,0 +1,14 @@
+.social{
+    margin-block: 100px;
+}
+
+.social__box{
+    margin-block-start: 60px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+.social__image{
+    grid-column: 4 span;
+}
