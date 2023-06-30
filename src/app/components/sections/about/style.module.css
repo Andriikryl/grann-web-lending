@@ -30,7 +30,7 @@
 
 .about__title{
     color: #705A66;
-    font-size: 100px;
+    font-size: clamp(20px, 5vw + 1rem, 100px);
     font-family: Moniqa;
     font-style: normal;
     font-weight: 900;
@@ -85,4 +85,22 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+}
+
+@media (max-width: 1000px) {
+    .about__box{
+        grid-template-columns: repeat(6, 1fr);
+        place-items: center;
+     }
+     .about__img{
+        grid-column: 6 span;
+     }
+     .about__info{
+        margin-block-start: 20px;
+        text-align: center;
+        grid-column: 6 span;
+    }
+    .inner__box{
+        margin-inline-start: 0px;
+    }
 }

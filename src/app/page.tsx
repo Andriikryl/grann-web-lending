@@ -15,7 +15,7 @@ export default function Home() {
       <Best />
       <Info />
       <Delivery />
-      {/* <About /> */}
+      <About />
       {/* <Questions /> */}
       {/* <Social /> */}
     </>
