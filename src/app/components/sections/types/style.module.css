@@ -1,5 +1,6 @@
 .types{
     padding-block: 120px;
+    overflow: hidden;
 }
 
 .types__box{

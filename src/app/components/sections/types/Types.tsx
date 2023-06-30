@@ -10,6 +10,23 @@ import ImageThree from "./images/type-3.jpg";
 import ImageFour from "./images/type-4.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+const XAnimations = {
+  hidden: { opacity: 0, x: -700 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+const XAnimationsRev = {
+  hidden: { opacity: 0, x: 700 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+
 export default function Types() {
   const turgetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -28,10 +45,17 @@ export default function Types() {
       className={styles.types}
       ref={turgetRef}
       style={{ opacity, x, scale }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2 }}
     >
       <Container>
         <ul className={styles.types__box}>
-          <li className={styles.type__item}>
+          <motion.li
+            className={styles.type__item}
+            variants={XAnimations}
+            custom={1}
+          >
             <motion.div className={styles.types__image}>
               <Image
                 src={ImageOne}
@@ -41,8 +65,12 @@ export default function Types() {
               ></Image>
             </motion.div>
             <button className={styles.types__btn}>Торти</button>
-          </li>
-          <li className={styles.type__item}>
+          </motion.li>
+          <motion.li
+            className={styles.type__item}
+            variants={XAnimationsRev}
+            custom={1}
+          >
             <div className={styles.types__image}>
               <Image
                 src={ImageTwo}
@@ -52,8 +80,12 @@ export default function Types() {
               ></Image>
             </div>
             <button className={styles.types__btn}>Шу</button>
-          </li>
-          <li className={styles.type__item}>
+          </motion.li>
+          <motion.li
+            className={styles.type__item}
+            variants={XAnimations}
+            custom={2}
+          >
             <div className={styles.types__image}>
               <Image
                 src={ImageThree}
@@ -63,8 +95,12 @@ export default function Types() {
               ></Image>
             </div>
             <button className={styles.types__btn}>Тістечка</button>
-          </li>
-          <li className={styles.type__item}>
+          </motion.li>
+          <motion.li
+            className={styles.type__item}
+            variants={XAnimationsRev}
+            custom={2}
+          >
             <div className={styles.types__image}>
               <Image
                 src={ImageFour}
@@ -74,7 +110,7 @@ export default function Types() {
               ></Image>
             </div>
             <button className={styles.types__btn}>Піца</button>
-          </li>
+          </motion.li>
         </ul>
       </Container>
     </motion.div>

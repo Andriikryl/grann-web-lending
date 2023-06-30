@@ -34,9 +34,30 @@ export default function Header() {
     [0, 0.15],
     ["0 0 0 rgba(0,0,0,0)", "3px 3px 0 rgba(0,0,0,0.12)"]
   );
+
+  const XAnimationsMinus = {
+    hidden: { opacity: 0, x: -400 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: custom * 0.2, duration: 0.8 },
+    }),
+  };
+
+  const XAnimations = {
+    hidden: { opacity: 0, x: 700 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: custom * 0.2, duration: 1.8 },
+    }),
+  };
+
   return (
     <motion.header
       className={styles.header}
+      initial="hidden"
+      whileInView="visible"
       style={{
         margin,
         backgroundColor,
@@ -50,14 +71,14 @@ export default function Header() {
     >
       <Container>
         <div className={styles.header__box}>
-          <a href="#">
+          <motion.a href="#" variants={XAnimationsMinus} custom={1}>
             <Logo />
-          </a>
+          </motion.a>
           <Nav activeState={activeState} />
           <div className={styles.flex__grup}>
-            <a href="#">
+            <motion.a href="#" variants={XAnimations} custom={4}>
               <Cart />
-            </a>
+            </motion.a>
             <BurgerButton onClick={handleClick} activeState={activeState} />
           </div>
         </div>

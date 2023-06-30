@@ -19,8 +19,31 @@ export default function Hero() {
   });
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+
+  const XAnimations = {
+    hidden: { opacity: 0, x: -700 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: custom * 0.2, duration: 1.8 },
+    }),
+  };
+  const YAnimations = {
+    hidden: { opacity: 0, y: 300 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: custom * 0.2, duration: 1.8 },
+    }),
+  };
   return (
-    <motion.section className={styles.hero} ref={turgetRef} style={{ opacity }}>
+    <motion.section
+      className={styles.hero}
+      ref={turgetRef}
+      style={{ opacity }}
+      initial="hidden"
+      whileInView="visible"
+    >
       <Container>
         <motion.div className={styles.inner__box} style={{ scale }}>
           <div className={styles.hero__box}>
@@ -28,20 +51,39 @@ export default function Hero() {
             <SubTitel />
           </div>
           <div className={styles.hero__btn}>
-            <div className={styles.box__bg}>
+            <motion.div
+              className={styles.box__bg}
+              variants={XAnimations}
+              custom={1}
+            >
               <Btn />
-            </div>
+            </motion.div>
           </div>
           <div className={styles.social__box}>
-            <a className={styles.social__link} href="#">
+            <motion.a
+              className={styles.social__link}
+              href="#"
+              variants={YAnimations}
+              custom={1}
+            >
               <Tg />
-            </a>
-            <a className={styles.social__link} href="#">
+            </motion.a>
+            <motion.a
+              className={styles.social__link}
+              href="#"
+              variants={YAnimations}
+              custom={2}
+            >
               <Fc />
-            </a>
-            <a className={styles.social__link} href="#">
+            </motion.a>
+            <motion.a
+              className={styles.social__link}
+              href="#"
+              variants={YAnimations}
+              custom={3}
+            >
               <Inst />
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </Container>

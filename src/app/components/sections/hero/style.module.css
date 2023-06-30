@@ -5,10 +5,10 @@
     background-size: 731px 521px;
     background-position: left;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .hero__box{
-    margin-block-start: 100px;
     margin-block-end: clamp(20px, 5vw + 2rem, 100px);
 }
 
