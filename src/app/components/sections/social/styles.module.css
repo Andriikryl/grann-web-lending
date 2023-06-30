@@ -12,3 +12,19 @@
 .social__image{
     grid-column: 4 span;
 }
+
+@media (max-width:1000px) {
+    .social__box{
+        place-items: center;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .social__image{
+        grid-column: 3 span;
+    }
+}
+
+@media (max-width:600px) {
+    .social__image{
+        grid-column: 6 span;
+    }
+}

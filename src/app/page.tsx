@@ -16,8 +16,8 @@ export default function Home() {
       <Info />
       <Delivery />
       <About />
-      {/* <Questions /> */}
-      {/* <Social /> */}
+      <Questions />
+      <Social />
     </>
   );
 }
