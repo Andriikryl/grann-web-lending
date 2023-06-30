@@ -4,7 +4,7 @@
     justify-content: center;
     display: flex;
     color: #705A66;
-    font-size: 100px;
+    font-size: clamp(25px, 5vw + 1rem, 100px);
     font-family: Moniqa;
     font-weight: 900;
     position: relative;

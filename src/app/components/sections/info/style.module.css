@@ -23,7 +23,6 @@
     object-fit: fill;
 }
 
-
 .info__desc{
     grid-column: 8 / 12 span;
 }
@@ -46,4 +45,23 @@
 
 .info__descr p:nth-child(1){
     margin-block-end: 20px;
+}
+
+@media (max-width: 900px) {
+    .info__box{
+        grid-template-columns: repeat(6, 1fr);
+        gap: 70px;
+        place-content: center;
+        place-items: center;
+    }
+    .info__desc{
+        grid-column: 6 span;
+        order: 1;
+        text-align: center;
+        max-width: 320px;
+    }
+    .info__img{
+        order: 2;
+    }
+    
 }

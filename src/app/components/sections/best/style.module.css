@@ -143,3 +143,10 @@
     border: none;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    .best__box{
+      padding: 18px 13px;
+      font-size: 17px;
+    }
+  }
