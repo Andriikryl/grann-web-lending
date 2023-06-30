@@ -58,6 +58,24 @@ const products = [
   },
 ];
 
+const XAnimations = {
+  hidden: { opacity: 0, x: -1000 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+
+const YAnimations = {
+  hidden: { opacity: 0, y: 300 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+
 export default function Best() {
   const turgetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -71,12 +89,19 @@ export default function Best() {
       className={styles.best}
       style={{ opacity, scale }}
       ref={turgetRef}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2 }}
     >
       <Container>
         <div>
           <Title text="Бестселлери" />
           <div className={styles.gallery}>
-            <ul className={styles.wrapper}>
+            <motion.ul
+              className={styles.wrapper}
+              variants={XAnimations}
+              custom={1}
+            >
               {products.map((product, index) => (
                 <li key={index} className={styles.item}>
                   <div>
@@ -98,13 +123,17 @@ export default function Best() {
                   </span>
                 </li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
-          <div className={styles.btn__box}>
+          <motion.div
+            className={styles.btn__box}
+            variants={YAnimations}
+            custom={1}
+          >
             <button className={styles.best__box}>
               Переглянути весь асортимент
             </button>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </motion.section>

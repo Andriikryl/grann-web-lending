@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./style.module.css";
 import { Container } from "../../contaniner/Container";
@@ -6,14 +8,50 @@ import Box from "../../icons/Box";
 import Bike from "../../icons/Bike";
 import Cash from "../../icons/Cash";
 
+import { motion } from "framer-motion";
+
+const XAnimations = {
+  hidden: { opacity: 0, x: -700 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+const XAnimationsRev = {
+  hidden: { opacity: 0, x: 700 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+const YAnimations = {
+  hidden: { opacity: 0, y: 300 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+
 export default function Delivery() {
   return (
-    <section className={styles.delivery}>
+    <motion.section
+      className={styles.delivery}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2 }}
+    >
       <Container>
         <Title text="Доставка і оплата" />
         <div className={styles.delivery__box}>
           <ul className={styles.delivery__list}>
-            <li className={styles.list__item}>
+            <motion.li
+              className={styles.list__item}
+              variants={XAnimations}
+              custom={1}
+            >
               <div className={styles.item__img}>
                 <Box />
               </div>
@@ -21,8 +59,12 @@ export default function Delivery() {
               <span className={styles.item__descrip}>
                 Самовивіз з Печерського р-ну, м. Київ
               </span>
-            </li>
-            <li className={styles.list__item}>
+            </motion.li>
+            <motion.li
+              className={styles.list__item}
+              variants={YAnimations}
+              custom={2}
+            >
               <div className={styles.item__img}>
                 <Bike />
               </div>
@@ -30,8 +72,12 @@ export default function Delivery() {
               <span className={styles.item__descrip}>
                 Доставка на таксі (за тарифами служби таксі)
               </span>
-            </li>
-            <li className={styles.list__item}>
+            </motion.li>
+            <motion.li
+              className={styles.list__item}
+              variants={XAnimationsRev}
+              custom={1}
+            >
               <div className={styles.item__img}>
                 <Cash />
               </div>
@@ -39,10 +85,10 @@ export default function Delivery() {
               <span className={styles.item__descrip}>
                 Передплата на картку в розмірі 50% від суми замовлення
               </span>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

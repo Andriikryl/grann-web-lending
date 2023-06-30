@@ -1,20 +1,53 @@
+"use client";
+
 import React from "react";
 import styles from "./style.module.css";
 import { Container } from "../../contaniner/Container";
 import Title from "../../title/Title";
 import InfoImage from "public/info/cake.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const XAnimations = {
+  hidden: { opacity: 0, x: -700 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
+const XAnimationsRev = {
+  hidden: { opacity: 0, x: 700 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.2, duration: 1.8 },
+  }),
+};
 
 export default function Info() {
   return (
-    <section className={styles.info}>
+    <motion.section
+      className={styles.info}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2 }}
+    >
       <Container>
         <Title text="Чому саме Grann?" />
         <div className={styles.info__box}>
-          <div className={styles.info__img}>
+          <motion.div
+            className={styles.info__img}
+            variants={XAnimations}
+            custom={1}
+          >
             <Image src={InfoImage} width={605} height={504} alt="cake" />
-          </div>
-          <div className={styles.info__desc}>
+          </motion.div>
+          <motion.div
+            className={styles.info__desc}
+            variants={XAnimationsRev}
+            custom={1}
+          >
             <dl>
               <dt className={styles.info__title}>
                 ВСІ ІНГРЕДІЄНТИ СВІЖІ ТА ЯКІСНІ!
@@ -42,9 +75,9 @@ export default function Info() {
                 </p>
               </dd>
             </dl>
-          </div>
+          </motion.div>
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

@@ -1,5 +1,6 @@
 .delivery__box{
     margin-block: 60px;
+    overflow: hidden;
 }
 
 .delivery__list{
