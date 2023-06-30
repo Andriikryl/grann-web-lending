@@ -58,6 +58,7 @@
     position: relative;
     right: -140px;
   }
+
   
   .slider {
     position: relative;
@@ -116,6 +117,7 @@
     overflow: hidden;
     color: #705A66;
     font-size: 226.448px;
+    font-size: clamp(30px, 5vw + 3rem, 226.448px);
     line-height: 175px;
     font-family: Moniqa;
     font-weight: 900;
@@ -197,3 +199,28 @@
     }
   }
   
+
+  @media (max-width: 700px) {
+    .test{
+      right: 0;
+      justify-content: center;
+    }
+    .hero__title{
+      text-align: center;
+    }
+    .slider{
+      width: 150px;
+    }
+    .inner__box{
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .hero{
+      background-position: bottom;
+    }
+    .hero__btn{
+      margin-top: auto;
+    }
+  }
