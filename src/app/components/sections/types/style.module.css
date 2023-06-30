@@ -92,3 +92,13 @@
     position: absolute;
     bottom: -17px;
 }
+
+@media (max-width: 1000px) {
+  .types__box{
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+  }
+  .type__item{
+    grid-column: 6 span;
+  }
+}
