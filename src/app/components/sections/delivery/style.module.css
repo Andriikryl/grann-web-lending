@@ -48,3 +48,22 @@
     font-family: Montserrat;
     font-weight: 300;
 }
+
+@media (max-width: 950px) {
+    .delivery__list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+.list__item:nth-child(1){
+    border-block-end: 1px solid hsla(39, 25%, 82%, 1);
+    padding-block-end: 55px;
+    padding-inline: 0;
+}
+.list__item:nth-child(2){
+    border-block-end: 1px solid hsla(39, 25%, 82%, 1);
+    padding-block-end: 55px;
+    padding-inline: 0;
+}
+}

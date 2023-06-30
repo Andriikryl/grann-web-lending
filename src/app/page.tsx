@@ -14,7 +14,7 @@ export default function Home() {
       <Types />
       <Best />
       <Info />
-      {/* <Delivery /> */}
+      <Delivery />
       {/* <About /> */}
       {/* <Questions /> */}
       {/* <Social /> */}
