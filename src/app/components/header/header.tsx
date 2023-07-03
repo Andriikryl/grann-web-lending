@@ -77,7 +77,7 @@ export default function Header() {
           </Link>
           <Nav activeState={activeState} />
           <div className={styles.flex__grup}>
-            <Link href="/cart">
+            <Link href="/">
               <Cart />
             </Link>
             <BurgerButton onClick={handleClick} activeState={activeState} />
