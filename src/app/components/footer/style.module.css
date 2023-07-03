@@ -1,0 +1,41 @@
+.footer{
+    background-color: hsla(327, 11%, 40%, 1);
+    padding-block: 100px;
+}
+
+.footer__box{
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer__links{
+    display: block;
+    color: #F5F7F8;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-block-end: 20px;
+    text-decoration: none;
+}
+
+.felx__group{
+    display: flex;
+    gap: 40px;
+    margin-block-end: 30px;
+}
+
+.felx__group a {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}

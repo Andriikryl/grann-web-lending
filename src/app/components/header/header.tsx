@@ -17,7 +17,7 @@ export default function Header() {
     setActiveState((prev) => !prev);
   };
   const { scrollYProgress } = useScroll();
-  const margin = useTransform(scrollYProgress, [0, 0.15], [10, 20]);
+  const margin = useTransform(scrollYProgress, [0, 0.15], [0, 20]);
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.15],
