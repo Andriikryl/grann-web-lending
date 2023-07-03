@@ -8,6 +8,7 @@ import Cart from "../icons/Cart";
 import BurgerButton from "./BurgerButton";
 import Nav from "./Nav";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 export default function Header() {
   const [activeState, setActiveState] = useState(false);
@@ -71,14 +72,14 @@ export default function Header() {
     >
       <Container>
         <div className={styles.header__box}>
-          <motion.a href="#" variants={XAnimationsMinus} custom={1}>
+          <Link href="/">
             <Logo />
-          </motion.a>
+          </Link>
           <Nav activeState={activeState} />
           <div className={styles.flex__grup}>
-            <motion.a href="#" variants={XAnimations} custom={4}>
+            <Link href="/cart">
               <Cart />
-            </motion.a>
+            </Link>
             <BurgerButton onClick={handleClick} activeState={activeState} />
           </div>
         </div>

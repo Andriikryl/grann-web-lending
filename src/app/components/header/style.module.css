@@ -105,6 +105,7 @@
 
   @media (max-width:740px) {
     .nav{
+      overscroll-behavior: contain !important;
       border-right: 1px solid #705A66 ;
       visibility: hidden;
       position: fixed;
@@ -112,7 +113,7 @@
       left: 0;
       top: 0;
       width: 100%;
-      background: hsla(223, 8%, 50%, .1);
+      background: hsla(223, 8%, 50%, .8);
       backdrop-filter: blur(10px);
       height: 100vh;
       z-index: 100;
@@ -160,6 +161,7 @@
   .nav.menu_active{
     visibility: visible;
     transform: none;
+    overscroll-behavior: contain;
     -webkit-transform: none;
     -moz-transform: none;
     -ms-transform: none;

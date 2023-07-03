@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "name": "Мусовий торт “Манго-маракуйя",
+      "price": 1200,
+      "description": "/ 3 кг",
+      "imgUrl": "/images/best-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Шоколадне тістечко брауні",
+      "price": 300,
+      "description": "/ 3шт",
+      "imgUrl": "/images/best-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Тістечка Шу",
+      "price": 400,
+      "description": "/ 6 шт",
+      "imgUrl": "/images/best-3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Мусовий торт “Манго-маракуйя",
+      "price": 1200,
+      "description": "/ 3 кг",
+      "imgUrl": "/images/best-1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Шоколадне тістечко брауні",
+      "price": 300,
+      "description": "/ 3шт",
+      "imgUrl": "/images/best-2.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Тістечка Шу",
+      "price": 400,
+      "description": "/ 6 шт",
+      "imgUrl": "/images/best-3.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Мусовий торт “Манго-маракуйя",
+      "price": 1200,
+      "description": "/ 3 кг",
+      "imgUrl": "/images/best-1.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Шоколадне тістечко брауні",
+      "price": 300,
+      "description": "/ 3шт",
+      "imgUrl": "/images/best-2.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Тістечка Шу",
+      "price": 400,
+      "description": "/ 6 шт",
+      "imgUrl": "/images/best-3.jpg"
+    }
+ 
+  ]

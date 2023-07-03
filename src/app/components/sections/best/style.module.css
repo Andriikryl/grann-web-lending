@@ -82,7 +82,7 @@
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
-
+/* 
   .item:hover{
     -webkit-transform: scale(1.25, 1.25);
     transform: scale(1.25, 1.25);
@@ -95,7 +95,7 @@
 
   .wrapper:has(.item:hover) .item:not(:hover){
     opacity: 0.1;
-  }
+  } */
 
   .card__title{
     color: #705A66;
