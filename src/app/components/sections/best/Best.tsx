@@ -46,15 +46,11 @@ export default function Best() {
         <div>
           <Title text="Бестселлери" />
           <div className={styles.gallery}>
-            <motion.ul
-              className={styles.wrapper}
-              variants={XAnimations}
-              custom={1}
-            >
+            <ul className={styles.wrapper}>
               {storeItems.map((item, index) => (
                 <StoreItem key={item.id} {...item} />
               ))}
-            </motion.ul>
+            </ul>
           </div>
           <motion.div
             className={styles.btn__box}

@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./style.module.css";
 import Image from "next/image";
 import Cart from "../../icons/Cart";
-import { useShoppingCart } from "@/app/context/ShopingCarContext";
 type StoreItemProps = {
   id: number;
   name: string;
@@ -18,13 +17,6 @@ export default function StoreItem({
   imgUrl,
   description,
 }: StoreItemProps) {
-  const {
-    getItemQuantity,
-    increaseCartQuantity,
-    decreaseCartQuantity,
-    removeFromCart,
-  } = useShoppingCart();
-  const quntity = getItemQuantity(id);
   return (
     <li className={styles.item}>
       <div>
@@ -38,26 +30,6 @@ export default function StoreItem({
       </div>
       <span className={styles.card__desc}>{description}</span>
       <span className={styles.card__desc}>{price}</span>
-      <div>
-        {quntity === 0 ? (
-          <button onClick={() => increaseCartQuantity(id)}>
-            + add to cart
-          </button>
-        ) : (
-          <div>
-            <div>
-              <button onClick={() => increaseCartQuantity(id)}>plus</button>
-              <div>
-                <span>{quntity}</span>
-              </div>
-              <button onClick={() => decreaseCartQuantity(id)}>minus</button>
-              <div>
-                <button onClick={() => removeFromCart(id)}>remove</button>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
     </li>
   );
 }
