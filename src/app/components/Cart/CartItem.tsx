@@ -1,6 +1,6 @@
-import { useShoppingCart } from "../context/ShopingCarContext";
-import storeItems from "../components/data/items.json";
-import { formatCurrency } from "../utilites/formatCurency";
+import { useShoppingCart } from "../../context/ShopingCarContext";
+import storeItems from "../data/items.json";
+import { formatCurrency } from "../../utilites/formatCurency";
 import Image from "next/image";
 
 type CartItemProps = {
