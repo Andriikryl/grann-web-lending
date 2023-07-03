@@ -3,7 +3,12 @@ import storeItems from "../components/data/items.json";
 import { formatCurrency } from "../utilites/formatCurency";
 import Image from "next/image";
 
-export function CartItem({ id, quantity }) {
+type CartItemProps = {
+  id: number;
+  quantity: number;
+};
+
+export function CartItem({ id, quantity }: CartItemProps) {
   const { removeFromCart } = useShoppingCart();
   const item = storeItems.find((i) => i.id === id);
   if (item == null) return null;
